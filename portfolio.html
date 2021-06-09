@@ -21,21 +21,21 @@
   
           /* navigation menu */
           nav {
-            background-color: rgb(255, 233, 196);
+            background: rgb(242, 134, 104);
             margin: 0 auto;
             margin-bottom: 20px;
-            margin-top: 20;
             display: flex;
             padding: 10px;
-            color: brown;
+            border-radius: 10px 100px / 120px;
             
           }
 
           h1 {
-              display: flex;
-              align-items: center;
-              color: brown;
-              flex: 1;
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
           }
           #nav-ul {
               list-style-type: square;
@@ -52,12 +52,14 @@
   
           /* main container area beneath menu */
           main {
-            background: rgb(242, 134, 104);
+            background-color: rgb(255, 233, 196);
             margin: 0 auto;
             margin-bottom: 20px;
+            margin-top: 20;
             display: flex;
             padding: 10px;
-            border-radius: 10px 100px / 120px;
+            color: brown;
+            
           }
           .content {
               flex: 1;
@@ -65,7 +67,7 @@
           }
           /* portfolio styles */
           .content h1 {
-          color: white;
+          color: black;
             }
             
             #portfolio {
@@ -74,10 +76,10 @@
             }
             
             #portfolio li {
-                background: #fff;
-                padding: 10px;
-                border-radius: 10px;
-                margin-bottom: 10px;
+              background-color: rgb(255, 246, 230);
+              border: 5px orange solid;
+              padding: 15px;
+              border-radius: 20px;
             }
             
             #portfolio li:hover {
@@ -86,7 +88,7 @@
             
             #portfolio a {
                 text-decoration: none;
-                color: #454545;
+                color: brown;
             }  
             
             
@@ -105,15 +107,15 @@
             <li class="nav-li">
               <a href="portfolio.html"> Portfolio </a>
             </li>
-            <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
-            <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
-            <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
           </ul>
         </nav>
         <main>
           <div class="content">
               <h1>Portfolio</h1>
               <ul id="portfolio">
+                <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+              <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
               </ul>
           </div>
           <div class="navigation">
