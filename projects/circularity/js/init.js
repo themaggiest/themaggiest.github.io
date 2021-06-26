@@ -26,7 +26,7 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
         function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-            physikz.addRandomVelocity(circle, canvas, 20, 20);
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
             circles.push(circle);
         }
@@ -74,17 +74,17 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            //when circle is at left, moves to right
+            //when circle is past left side of screen, move to right
             if ( circle.x < 0){
                 circle.x = canvas.width;
             }
             
-            //when circle is at bottom, moves to top
+            //when circle is past bottom of screen, move to top
             if ( circle.y > canvas.height){
                 circle.y = 0;
             }
 
-            //when circle is at top, moves to bottom
+            //when circle is past top of screen, move to bottom
             if ( circle.y < 0){
                 circle.y = canvas.height;
             }
