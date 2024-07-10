@@ -34,7 +34,7 @@
 
     <div id="result"></div>
     <div id="canvasContainer">
-        <canvas id="myCanvas" style="border:1px solid #000000;"></canvas>
+        <canvas id="myCanvas" width="100" height="100" style="border:1px solid #000000;"></canvas>
     </div>
 
     <script>
@@ -44,15 +44,7 @@
             const c = parseFloat(document.getElementById('c').value);
             const d = parseFloat(document.getElementById('d').value);
 
-            // Calculate the total extent of the lines
-            const totalWidth = Math.abs(a) + Math.abs(c);
-            const totalHeight = Math.abs(b) + Math.abs(d);
-
-            // Set canvas size based on the total extent
             const canvas = document.getElementById('myCanvas');
-            canvas.width = totalWidth + 100;  // Adding some padding
-            canvas.height = totalHeight + 100; // Adding some padding
-
             const ctx = canvas.getContext('2d');
 
             // Clear the canvas
@@ -65,4 +57,24 @@
             ctx.beginPath();
             ctx.moveTo(x, y);
 
-            // Draw first line (a 
+            // Draw first line (a units to the right or left)
+            x += a;
+            ctx.lineTo(x, y);
+
+            // Draw second line (b units up or down)
+            y -= b;
+            ctx.lineTo(x, y);
+
+            // Draw third line (c units left or right)
+            x -= c;
+            ctx.lineTo(x, y);
+
+            // Draw fourth line (d units down or up)
+            y += d;
+            ctx.lineTo(x, y);
+
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>
