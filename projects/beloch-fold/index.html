@@ -34,7 +34,7 @@
 
     <div id="result"></div>
     <div id="canvasContainer">
-        <canvas id="myCanvas" style="border:1px solid #000000;"></canvas>
+        <canvas id="myCanvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
     </div>
 
     <script>
@@ -44,15 +44,7 @@
             const c = parseFloat(document.getElementById('c').value);
             const d = parseFloat(document.getElementById('d').value);
 
-            // Calculate the total extent of the lines
-            const totalWidth = Math.abs(a) + Math.abs(c);
-            const totalHeight = Math.abs(b) + Math.abs(d);
-
-            // Set canvas size based on the total extent
             const canvas = document.getElementById('myCanvas');
-            canvas.width = totalWidth + 100;  // Adding some padding
-            canvas.height = totalHeight + 100; // Adding some padding
-
             const ctx = canvas.getContext('2d');
 
             // Clear the canvas
@@ -62,10 +54,6 @@
             let x = canvas.width / 2;
             let y = canvas.height / 2;
 
-            // Store initial start point for reference
-            const startX = x;
-            const startY = y;
-
             ctx.beginPath();
             ctx.moveTo(x, y);
 
@@ -74,37 +62,15 @@
             ctx.lineTo(x, y);
 
             // Draw second line (b units up or down)
-            const secondLineStartX = x;
-            const secondLineStartY = y;
             y -= b;
             ctx.lineTo(x, y);
 
-            // Calculate distance of second line
-            const secondLineDistance = Math.sqrt(Math.pow(secondLineStartX - startX, 2) + Math.pow(secondLineStartY - startY, 2));
-
-            // Draw dotted line parallel to second line
-            ctx.setLineDash([5, 5]);
-            ctx.moveTo(secondLineStartX + b, secondLineStartY);
-            ctx.lineTo(secondLineStartX + b, secondLineStartY - b);
-            ctx.stroke();
-
             // Draw third line (c units left or right)
-            const thirdLineStartX = x;
-            const thirdLineStartY = y;
             x -= c;
             ctx.lineTo(x, y);
 
-            // Calculate distance of third line
-            const thirdLineDistance = Math.sqrt(Math.pow(thirdLineStartX - secondLineStartX, 2) + Math.pow(thirdLineStartY - secondLineStartY, 2));
-
-            // Draw dotted line parallel to third line
-            ctx.moveTo(thirdLineStartX, thirdLineStartY - c);
-            ctx.lineTo(thirdLineStartX - c, thirdLineStartY - c);
-            ctx.stroke();
-
             // Draw fourth line (d units down or up)
             y += d;
-            ctx.setLineDash([]);
             ctx.lineTo(x, y);
 
             ctx.stroke();
