@@ -20,6 +20,7 @@
         #canvasContainer {
             margin-top: 20px;
         }
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.6.0/math.min.js"></script>
     </style>
 </head>
 <body>
@@ -37,6 +38,33 @@
         <canvas id="myCanvas" width="50" height="50" style="border:1px solid #000000;"></canvas>
     </div>
 
+    <script>
+        [root1, root2, root3] = math.polynomialRoot(d, c, b, a);
+        if (typeof root1 !== Complex) {
+          root11 = root1;
+        }
+        if (typeof root2 !== Complex) {
+          root22 = root2;
+        }
+        if (typeof root3 !== Complex) {
+          root33 = root3;
+        }
+        
+    </script>
+    <h2>
+        The real roots of the polynomial are 
+        <script type="text/javascript">
+        document.write(root11)
+        </script>
+        ,
+        <script type="text/javascript">
+        document.write(root22)
+        </script>
+        , and
+        <script type="text/javascript">
+        document.write(root33)
+        </script>
+    </h2>
     <script>
         function drawLines() {
             const a = parseFloat(document.getElementById('a').value);
