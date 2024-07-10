@@ -7,9 +7,11 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        label, input {
-            display: block;
-            margin: 10px 0;
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 20px;
         }
         #result {
             margin-top: 20px;
@@ -51,8 +53,9 @@
                 polynomial += (d > 0 ? '+ ' : '- ') + Math.abs(d);
             }
 
-            document.getElementById('result').innerText = 'The polynomial is: ' + polynomial;
+            document.getElementById('result').innerHTML = 'The polynomial is: ' + polynomial;
         }
     </script>
 </body>
 </html>
+
