@@ -20,17 +20,7 @@
 <body>
     <h1>Third Degree Polynomial Input</h1>
     <form id="polynomialForm">
-        <label for="a">Coefficient a (x^3):</label>
-        <input type="number" id="a" name="a" required>
-        
-        <label for="b">Coefficient b (x^2):</label>
-        <input type="number" id="b" name="b" required>
-        
-        <label for="c">Coefficient c (x):</label>
-        <input type="number" id="c" name="c" required>
-        
-        <label for="d">Coefficient d (constant):</label>
-        <input type="number" id="d" name="d" required>
+        <input type="number" id="a" name="a" required> <label for="a">x<sup>3</sup> + :</label> <input type="number" id="b" name="b" required> <label for="b">x<sup>2</sup> + :</label> <input type="number" id="c" name="c" required> <label for="c">x + :</label> <input type="number" id="d" name="d" required> <label for="d"> :</label> 
         
         <button type="button" onclick="displayPolynomial()">Submit</button>
     </form>
@@ -47,10 +37,10 @@
             let polynomial = '';
 
             if (a !== 0) {
-                polynomial += a + 'x^3 ';
+                polynomial += a + 'x<sup>3</sup> ';
             }
             if (b !== 0) {
-                polynomial += (b > 0 ? '+ ' : '- ') + Math.abs(b) + 'x^2 ';
+                polynomial += (b > 0 ? '+ ' : '- ') + Math.abs(b) + 'x<sup>2</sup> ';
             }
             if (c !== 0) {
                 polynomial += (c > 0 ? '+ ' : '- ') + Math.abs(c) + 'x ';
