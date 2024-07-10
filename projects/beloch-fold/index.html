@@ -50,8 +50,8 @@
 
             // Set canvas size based on the total extent
             const canvas = document.getElementById('myCanvas');
-            canvas.width = totalWidth + 100;  // Adding some padding
-            canvas.height = totalHeight + 100; // Adding some padding
+            canvas.width = totalWidth + 200;  // Adding some padding
+            canvas.height = totalHeight + 200; // Adding some padding
 
             const ctx = canvas.getContext('2d');
 
@@ -74,39 +74,47 @@
             ctx.lineTo(x, y);
 
             // Draw second line (b units up or down)
-            const secondLineStartX = x;
-            const secondLineStartY = y;
             y -= b;
             ctx.lineTo(x, y);
 
-            // Calculate distance of second line
-            const secondLineDistance = Math.sqrt(Math.pow(secondLineStartX - startX, 2) + Math.pow(secondLineStartY - startY, 2));
-
-            // Draw dotted line parallel to second line
-            ctx.setLineDash([5, 5]);
-            ctx.moveTo(secondLineStartX + b, secondLineStartY);
-            ctx.lineTo(secondLineStartX + b, secondLineStartY - b);
-            ctx.stroke();
-
             // Draw third line (c units left or right)
-            const thirdLineStartX = x;
-            const thirdLineStartY = y;
             x -= c;
             ctx.lineTo(x, y);
 
-            // Calculate distance of third line
-            const thirdLineDistance = Math.sqrt(Math.pow(thirdLineStartX - secondLineStartX, 2) + Math.pow(thirdLineStartY - secondLineStartY, 2));
-
-            // Draw dotted line parallel to third line
-            ctx.moveTo(thirdLineStartX, thirdLineStartY - c);
-            ctx.lineTo(thirdLineStartX - c, thirdLineStartY - c);
-            ctx.stroke();
-
             // Draw fourth line (d units down or up)
             y += d;
-            ctx.setLineDash([]);
             ctx.lineTo(x, y);
 
+            ctx.stroke();
+
+            // Draw dotted line parallel to second line
+            ctx.setLineDash([5, 5]);
+            ctx.strokeStyle = 'red';
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(startX, startY - b);
+            ctx.moveTo(startX + a, startY);
+            ctx.lineTo(startX + a, startY - b);
+            ctx.stroke();
+
+            // Draw dotted line parallel to third line
+            ctx.beginPath();
+            ctx.moveTo(x + c, y);
+            ctx.lineTo(x + c, y - b);
+            ctx.stroke();
+
+            // Calculate perpendicular bisector of lines 1 and 2
+            const midX1 = (startX + (startX + a)) / 2;
+            const midY1 = (startY + (startY - b)) / 2;
+            const midX2 = (x + (x + c)) / 2;
+            const midY2 = (y + (y - b)) / 2;
+
+            // Draw perpendicular bisector
+            ctx.setLineDash([]);
+            ctx.strokeStyle = 'red';
+            ctx.beginPath();
+            ctx.moveTo(midX1, midY1);
+            ctx.lineTo(midX2, midY2);
             ctx.stroke();
         }
     </script>
