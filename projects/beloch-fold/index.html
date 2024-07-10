@@ -45,20 +45,35 @@
             const c = parseFloat(document.getElementById('c').value);
             const d = parseFloat(document.getElementById('d').value);
 
+            // Log coefficients to console for debugging
+            console.log(`Coefficients: a=${a}, b=${b}, c=${c}, d=${d}`);
+
             // Define the polynomial
-            const polynomial = [d, c, b, a];
+            const polynomial = [a, b, c, d];
 
-            // Calculate the roots
-            const roots = math.polynomialRoot(polynomial);
+            try {
+                // Calculate the roots
+                const roots = math.roots(polynomial);
 
-            // Filter out real roots
-            const realRoots = roots.filter(root => math.im(root) === 0).map(root => math.re(root));
+                // Log roots to console for debugging
+                console.log(`Roots: ${roots}`);
 
-            // Display the real roots
-            document.getElementById('result').textContent = `These are the real roots of the polynomial ${a}x³ + ${b}x² + ${c}x + ${d}: ${realRoots.length > 0 ? realRoots.join(', ') : 'No real roots'}`;
-            
-            // Draw the lines as per your previous requirements
-            drawLines(a, b, c, d);
+                // Filter out real roots
+                const realRoots = roots.filter(root => math.im(root) === 0).map(root => math.re(root));
+
+                // Log real roots to console for debugging
+                console.log(`Real Roots: ${realRoots}`);
+
+                // Display the real roots
+                document.getElementById('result').textContent = `These are the real roots of the polynomial ${a}x³ + ${b}x² + ${c}x + ${d}: ${realRoots.length > 0 ? realRoots.join(', ') : 'No real roots'}`;
+                
+                // Draw the lines as per your previous requirements
+                drawLines(a, b, c, d);
+            } catch (error) {
+                // Log error to console for debugging
+                console.error(`Error finding roots: ${error}`);
+                document.getElementById('result').textContent = `Error computing roots. Please check the polynomial coefficients.`;
+            }
         }
 
         function drawLines(a, b, c, d) {
@@ -138,3 +153,4 @@
     </script>
 </body>
 </html>
+
