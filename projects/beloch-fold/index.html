@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Third Degree Polynomial Roots</title>
+    <meta charset="UTF-8">
+    <title>Third Degree Polynomial Solver</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,13 +25,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.6.0/math.min.js"></script>
 </head>
 <body>
-    <h1>Third Degree Polynomial Input</h1>
+    <h1>Third Degree Polynomial Solver</h1>
     <form id="polynomialForm" class="input-group">
         <input type="number" id="a" name="a" value="0" required> <label for="a">x<sup>3</sup> +</label>
         <input type="number" id="b" name="b" value="0" required> <label for="b">x<sup>2</sup> +</label>
         <input type="number" id="c" name="c" value="0" required> <label for="c">x +</label>
-        <input type="number" id="d" name="d" value="0" required> <label for="d"></label>
-        <button type="button" onclick="findRoots()">Submit</button>
+        <input type="number" id="d" name="d" value="0" required>
+        <button type="button" onclick="solvePolynomial()">Submit</button>
     </form>
 
     <div id="result"></div>
@@ -39,118 +40,61 @@
     </div>
 
     <script>
-        function findRoots() {
+        function solvePolynomial() {
             const a = parseFloat(document.getElementById('a').value);
             const b = parseFloat(document.getElementById('b').value);
             const c = parseFloat(document.getElementById('c').value);
             const d = parseFloat(document.getElementById('d').value);
 
-            // Log coefficients to console for debugging
-            console.log(`Coefficients: a=${a}, b=${b}, c=${c}, d=${d}`);
-
-            // Define the polynomial
             const polynomial = [a, b, c, d];
 
             try {
-                // Calculate the roots
                 const roots = math.roots(polynomial);
-
-                // Log roots to console for debugging
-                console.log(`Roots: ${roots}`);
-
-                // Filter out real roots
                 const realRoots = roots.filter(root => math.im(root) === 0).map(root => math.re(root));
+                const arctans = realRoots.map(root => math.atan(-root));
 
-                // Log real roots to console for debugging
-                console.log(`Real Roots: ${realRoots}`);
+                document.getElementById('result').textContent = `
+                    Real roots: ${realRoots.length > 0 ? realRoots.join(', ') : 'No real roots'}
+                    Arctans: ${arctans.length > 0 ? arctans.join(', ') : 'N/A'}
+                `;
 
-                // Display the real roots
-                document.getElementById('result').textContent = `These are the real roots of the polynomial ${a}x³ + ${b}x² + ${c}x + ${d}: ${realRoots.length > 0 ? realRoots.join(', ') : 'No real roots'}`;
-                
-                // Draw the lines as per your previous requirements
                 drawLines(a, b, c, d);
             } catch (error) {
-                // Log error to console for debugging
                 console.error(`Error finding roots: ${error}`);
                 document.getElementById('result').textContent = `Error computing roots. Please check the polynomial coefficients.`;
             }
         }
 
         function drawLines(a, b, c, d) {
-            // Calculate the total extent of the lines
             const totalWidth = Math.abs(a) + Math.abs(c);
             const totalHeight = Math.abs(b) + Math.abs(d);
 
-            // Set canvas size based on the total extent
             const canvas = document.getElementById('myCanvas');
-            canvas.width = totalWidth + 200;  // Adding some padding
-            canvas.height = totalHeight + 200; // Adding some padding
+            canvas.width = totalWidth + 200;
+            canvas.height = totalHeight + 200;
 
             const ctx = canvas.getContext('2d');
-
-            // Clear the canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Start point P (center of the canvas)
             let x = canvas.width / 2;
             let y = canvas.height / 2;
-
-            // Store initial start point for reference
-            const startX = x;
-            const startY = y;
 
             ctx.beginPath();
             ctx.moveTo(x, y);
 
-            // Draw first line (a units to the right or left)
             x += a;
             ctx.lineTo(x, y);
-
-            // Draw second line (b units up or down)
             y -= b;
             ctx.lineTo(x, y);
-
-            // Draw third line (c units left or right)
             x -= c;
             ctx.lineTo(x, y);
-
-            // Draw fourth line (d units down or up)
             y += d;
             ctx.lineTo(x, y);
 
-            ctx.stroke();
-
-            // Draw dotted line parallel to second line
-            ctx.setLineDash([5, 5]);
-            ctx.strokeStyle = 'red';
-            ctx.beginPath();
-            ctx.moveTo(startX, startY);
-            ctx.lineTo(startX, startY - b);
-            ctx.moveTo(startX + a, startY);
-            ctx.lineTo(startX + a, startY - b);
-            ctx.stroke();
-
-            // Draw dotted line parallel to third line
-            ctx.beginPath();
-            ctx.moveTo(x + c, y);
-            ctx.lineTo(x + c, y - b);
-            ctx.stroke();
-
-            // Calculate perpendicular bisector of lines 1 and 2
-            const midX1 = (startX + (startX + a)) / 2;
-            const midY1 = (startY + (startY - b)) / 2;
-            const midX2 = (x + (x + c)) / 2;
-            const midY2 = (y + (y - b)) / 2;
-
-            // Draw perpendicular bisector
-            ctx.setLineDash([]);
-            ctx.strokeStyle = 'red';
-            ctx.beginPath();
-            ctx.moveTo(midX1, midY1);
-            ctx.lineTo(midX2, midY2);
             ctx.stroke();
         }
     </script>
 </body>
 </html>
+
 
