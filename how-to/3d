@@ -115,6 +115,26 @@
             details details summary {
             	font-size: 16px;
             }
+
+            /* unvisited link */
+            a:link {
+              color: red;
+            }
+            
+            /* visited link */
+            a:visited {
+              color: green;
+            }
+            
+            /* mouse over link */
+            a:hover {
+              color: white;
+            }
+            
+            /* selected link */
+            a:active {
+              color: blue;
+            }
       </style>
     </head>
         
@@ -136,7 +156,7 @@
           <main>
             <!-- Sidebar section -->
             <div class="sidebar">
-              <img class= "sidebar-img" src= "Remove background project.png">
+              <img class= "sidebar-img" src= "Jackie-3d.png">
             </div>
         
             <!-- Content section -->
@@ -156,6 +176,18 @@
                         <summary>TinkerCAD for 3D design</summary>
 
                         
+                    </details>
+                </article>
+
+                <article>
+                    <details>
+                        <summary>Ultimaker Cura for slicing</summary>
+                    </details>
+                </article>
+
+                <article>
+                    <details>
+                        <summary>Ultimaker S5 for printing</summary>
                     </details>
                 </article>
               </div>
