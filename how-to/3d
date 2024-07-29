@@ -149,7 +149,7 @@
                   <li>Slicing the design into layers</li>
                   <li>Printing it on the 3D printer</li>
                 </ol>
-              <p> At Jackie, we're going to be using <a href = https://www.tinkercad.com/3d-design>TinkerCAD</a> to create the design, <a href=https://ultimaker.com/software/ultimaker-cura/>Ultimaker Cura</a> to slice the design into layers, and an <a href=https://support.makerbot.com/s/article/1667410778241>Ultimaker S5</a> as our 3D printer.</a>
+              <p> At Jackie, we're going to be using <a href = https://www.tinkercad.com/3d-design>TinkerCAD</a> to create the design (usually in the form of a .stl file), <a href=https://ultimaker.com/software/ultimaker-cura/>Ultimaker Cura</a> to slice the design into layers (usually in the form of a .ufp file), and an <a href=https://support.makerbot.com/s/article/1667410778241>Ultimaker S5</a> as our 3D printer. For step 1, you can also find designs that others have made on sites like <a href=https://www.thingiverse.com/>Thingiverse</a>.</p>
             </div>
 
             
