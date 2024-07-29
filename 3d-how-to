@@ -92,7 +92,29 @@
             #portfolio a {
                 text-decoration: none;
                 color: brown;
-            }  
+            }
+
+            summary::-webkit-details-marker {
+             color: #00ACF3;
+             font-size: 125%;
+             margin-right: 2px;
+            }
+            summary:focus {
+            	outline-style: none;
+            }
+            article > details > summary {
+            	font-size: 28px;
+            	margin-top: 16px;
+            }
+            details > p {
+            	margin-left: 24px;
+            }
+            details details {
+            	margin-left: 36px;
+            }
+            details details summary {
+            	font-size: 16px;
+            }
       </style>
     </head>
         
@@ -121,8 +143,13 @@
             <div class="content">
               <h2>3D Printing: Set-up and Maintenance</h2>
               <h3>Hi! This is a guide designed for the Jackie Unit of Boys and Girls Clubs of Acadiana. We have an Ultimaker S5 and use Ultimaker Cura as our slicing program. Don't worry if those words don't make sense yet- we'll get into it together. </h3>
-              <!-- Interests section -->
-              
+              <p> There are 3 basic steps for 3D printing, no matter which kind of printer you use.</p>
+                <ol>
+                  <li>Creating a 3D design</li>
+                  <li>Slicing the design into layers</li>
+                  <li>Printing it on the 3D printer</li>
+                </ol>
+              <p> At Jackie, we're going to be using <a href = https://www.tinkercad.com/3d-design>TinkerCAD</a> to create the design, <a href=https://ultimaker.com/software/ultimaker-cura/>Ultimaker Cura</a> to slice the design into layers, and an <a href=https://support.makerbot.com/s/article/1667410778241>Ultimaker S5</a> as our 3D printer.</a>
             </div>
 
             
