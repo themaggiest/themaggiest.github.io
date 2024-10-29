@@ -1,1 +1,214 @@
-sdf
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Maggie Lai</title>
+      <style>
+        body {
+            background: rgb(255, 255, 230);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: 'Gill Sans', 'Trebuchet MS', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #all-contents {
+            max-width: 1000px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            background: rgb(242, 134, 104);
+            margin: 20px auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px 100px / 120px;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        #nav-ul {
+            list-style-image: none;
+        }
+        .nav-li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            background: rgb(255, 233, 196);
+            display: flex;
+            
+        }
+        
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar-img {
+            width: 250px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        #interests {
+            background-color: rgb(255, 246, 230);
+            display: grid;
+            border: 10px orange solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 12px;
+        }
+        .interests_text {
+            color: brown;
+            list-style-type: square;
+            list-style-image: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h2{
+          font-size: 25px;
+          color: brown;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        p{
+            font-size: 20px;
+            color: brown;
+        }
+        li{
+            font-size:20px;
+            color:brown;
+        }
+        
+        #portfolio li {
+              background-color: rgb(255, 246, 230);
+              border: 5px orange solid;
+              padding: 15px;
+              border-radius: 20px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: brown;
+            }
+
+            summary::-webkit-details-marker {
+             color: brown;
+             font-size: 125%;
+             margin-right: 2px;
+            }
+            summary:focus {
+            	outline-style: none;
+                color: brown;
+            }
+            article > details > summary {
+            	font-size: 25px;
+            	margin-top: 5px;
+            }
+            details > p {
+            	margin-left: 24px;
+            }
+            details details {
+            	margin-left: 36px;
+            }
+            details details summary {
+            	font-size: 20px;
+            }
+
+            /* unvisited link */
+            a:link {
+              color: red;
+            }
+            
+            /* visited link */
+            a:visited {
+              color: green;
+            }
+            
+            /* mouse over link */
+            a:hover {
+              color: white;
+            }
+            
+            /* selected link */
+            a:active {
+              color: blue;
+            }
+
+          .subbox {
+            background-color: rgb(255, 252, 245);
+            display: grid;
+            border: 2px rgb(242, 134, 104) solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 5px;
+        }
+      </style>
+    </head>
+        
+    <body>
+      <!-- All content goes here -->
+      <div id="all-contents"> 
+        <nav>
+          <h1> Maggie Lai 赖潇颖</h1>
+          <ul id="nav-ul">
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/index.html"> Home </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/portfolio.html"> Portfolio </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/guides.html">Guides</a>
+            </li>
+          </ul>
+        </nav>
+  
+          <main>
+            <!-- Sidebar section -->
+            <div class="sidebar">
+              <img src="cnc.jpg" alt="DIY CNC hotwire for foam">
+            </div>
+        
+            <!-- Content section -->
+            <div class="content">
+              <h2>CNC Hotwire</h2>
+              <p>Following <a href="https://www.youtube.com/watch?v=cQN6KdKg7DI">this guide</a>, my friend (a computer science major) and I built our own 4-axis CNC foam cutter. I</p>
+              <ul>
+                <li>3D printed the parts listed under the video,</li>
+                <li>assembled the basic structure, and</li>
+                <li>collaborated with my friend to make sure it ran smoothly</li>
+              </ul>
+              <p>to cut our own radio control plane wings.</p>
+            </div>
+          </main>
+        <br>
+          <br>
+            
+           <main>
+            <div id="interests"> 
+              <p>We volunteered to host an aeromodelling workshop together at Girls in STEM at Tulane (GIST), a semiannual program hosted by Tulane, and brought in our CNC-cut wings and hand-cut fuselages:</p>
+                <img src="lantern_inmotion.png" alt="lantern with handle turned and lid sliding open" width = "800" height = "380">
+              <p>I created a single svg cut file for all parts of the lantern:</p>
+                <img src="lantern_cutfile.png" alt="lantern's laser cutting file" width="856" height="304">
+              <p>The assembled and lit lantern:</p>
+                <img src="lantern_irl.jpg" alt="fully assembled lantern" width= "800" height = "800">
+            </div>
+           </main>
+
+      </div>
+  </body>
+</html>
