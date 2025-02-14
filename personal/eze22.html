@@ -28,27 +28,30 @@
 <body>
     <h2>Fill in the Blank Quiz</h2>
     <div class="question">
-        1. The capital of France is <input type="text" id="q1">.
+        1. Today's date is (input as "DD-MM-YYYY"): <input type="text" id="q1">.
     </div>
     <div class="question">
-        2. The largest planet in our solar system is <input type="text" id="q2">.
+        2. Your sister's first name is: <input type="text" id="q2">.
     </div>
     <div class="question">
-        3. Water freezes at <input type="text" id="q3"> degrees Celsius.
+        3. You are now <input type="text" id="q3"> months old!
     </div>
     <div class="question">
-        4. What is the chemical symbol for gold?
+        4. Which of these scenarios does not happen in Romance of the Three Kingdoms?​ (三國演義)​ (三国演义)​
         <br>
-        <input type="radio" name="q4" value="Ag"> Ag
-        <input type="radio" name="q4" value="Au"> Au
-        <input type="radio" name="q4" value="Pb"> Pb
+        <input type="radio" name="q4" value="1"> A man eats his own eyeball​
+        <input type="radio" name="q4" value="2"> A man picks up and uses another man as a weapon​
+        <input type="radio" name="q4" value="3"> A man commits suicide by deliberately jumping off his horse​
+        <input type="radio" name="q4" value="4"> A man fights a tiger with his bare hands and wins​
     </div>
     <div class="question">
-        5. Which is the smallest country in the world?
+        5. During what holiday was this magnificent picture taken?
+        <img src="photobomb.JPG" alt="epic photobomb" width="308.8" height="232">
         <br>
-        <input type="radio" name="q5" value="Monaco"> Monaco
-        <input type="radio" name="q5" value="Vatican City"> Vatican City
-        <input type="radio" name="q5" value="San Marino"> San Marino
+        <input type="radio" name="q5" value="1"> Ezekiel Diong Birthday
+        <input type="radio" name="q5" value="2"> Mardi Gras
+        <input type="radio" name="q5" value="3"> International Talk Like a Pirate Day
+        <input type="radio" name="q5" value="4"> Boxing Day
     </div>
     <button onclick="checkAnswers()">Submit</button>
     <div class="result" id="result"></div>
@@ -57,11 +60,11 @@
     <script>
         function checkAnswers() {
             let answers = {
-                q1: "Paris",
-                q2: "Jupiter",
-                q3: "0",
-                q4: "Au",
-                q5: "Vatican City"
+                q1: "14-02-2025",
+                q2: "Kimberly",
+                q3: "264",
+                q4: "3",
+                q5: "2"
             };
             
             let score = 0;
