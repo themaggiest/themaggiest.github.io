@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fill in the Blank Quiz</title>
+    <title>Birthday Quiz!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,39 +17,68 @@
             margin-top: 20px;
             font-weight: bold;
         }
+        .congrats {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: green;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h2>Fill in the Blank Quiz</h2>
+    <h2>Birthday Quiz!</h2>
     <div class="question">
-        1. The capital of France is <input type="text" id="q1">.
+        1. Our anniversary date (format as MM-DD): <input type="text" id="q1">.
     </div>
     <div class="question">
-        2. The largest planet in our solar system is <input type="text" id="q2">.
+        2. Your sister's first name: <input type="text" id="q2">.
     </div>
     <div class="question">
-        3. Water freezes at <input type="text" id="q3"> degrees Celsius.
+        3. You are now <input type="text" id="q3"> months old!
+    </div>
+    <div class="question">
+        4. Which of these scenarios does not happen in Romance of the Three Kingdoms?​
+        <br>
+        <input type="radio" name="q4" value="A man eats his own eyeball​"> A man eats his own eyeball
+        <input type="radio" name="q4" value="A man picks up and uses another man as a weapon"> A man picks up and uses another man as a weapon
+        <input type="radio" name="q4" value="A man commits suicide by deliberately jumping off his horse​"> A man commits suicide by deliberately jumping off his horse​
+        <input type="radio" name="q4" value="A man fights a tiger with his bare hands and wins​"> A man fights a tiger with his bare hands and wins​
     </div>
     <button onclick="checkAnswers()">Submit</button>
     <div class="result" id="result"></div>
+    <div class="congrats" id="congrats">Congratulations! You got all the answers correct! 🎉</div>
 
     <script>
         function checkAnswers() {
             let answers = {
-                q1: "Paris",
-                q2: "Jupiter",
-                q3: "0"
+                q1: "09-25",
+                q2: "Kimberly",
+                q3: "264",
+                q4: "A man fights a tiger with his bare hands and wins​"
             };
             
             let score = 0;
             Object.keys(answers).forEach(id => {
-                let userAnswer = document.getElementById(id).value.trim();
-                if (userAnswer.toLowerCase() === answers[id].toLowerCase()) {
-                    score++;
+                if (id === "q4") {
+                    let selectedOption = document.querySelector(`input[name="q4"]:checked`);
+                    if (selectedOption && selectedOption.value === answers[id]) {
+                        score++;
+                    }
+                } else {
+                    let userAnswer = document.getElementById(id).value.trim();
+                    if (userAnswer.toLowerCase() === answers[id].toLowerCase()) {
+                        score++;
+                    }
                 }
             });
             
             document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+            
+            if (score === Object.keys(answers).length) {
+                document.getElementById("congrats").style.display = "block";
+            } else {
+                document.getElementById("congrats").style.display = "none";
+            }
         }
     </script>
 </body>
