@@ -59,37 +59,46 @@
 
     <script>
         function checkAnswers() {
-            let answers = {
-                q1: "02-14-2025",
-                q2: "Kimberly",
-                q3: "264",
-                q4: "A man commits suicide by deliberately jumping off his horse​"
-                q5: "Mardi Gras"
-            };
-            
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                if (id === "q4" || id === "q5") {
-                    let selectedOption = document.querySelector(`input[name="${id}"]:checked`);
-                    if (selectedOption && selectedOption.value === answers[id]) {
-                        score++;
-                    }
-                } else {
-                    let userAnswer = document.getElementById(id).value.trim();
-                    if (userAnswer.toLowerCase() === answers[id].toLowerCase()) {
-                        score++;
-                    }
+    console.log("checkAnswers function is running");
+
+    let answers = {
+        q1: "14-02-2025",
+        q2: "Kimberly",
+        q3: "264",
+        q4: "A man commits suicide by deliberately jumping off his horse",
+        q5: "Mardi Gras"
+    };
+
+    let score = 0;
+    Object.keys(answers).forEach(id => {
+        if (id === "q4" || id === "q5") {
+            let selectedOption = document.querySelector(`input[name="${id}"]:checked`);
+            if (selectedOption) {
+                console.log(`Answer for ${id}: ${selectedOption.value}`);
+                if (selectedOption.value === answers[id]) {
+                    score++;
                 }
-            });
-            
-            document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
-            
-            if (score === Object.keys(answers).length) {
-                document.getElementById("congrats").style.display = "block";
             } else {
-                document.getElementById("congrats").style.display = "none";
+                console.log(`No selection made for ${id}`);
+            }
+        } else {
+            let userAnswer = document.getElementById(id)?.value?.trim();
+            console.log(`Answer for ${id}: ${userAnswer}`);
+            if (userAnswer && userAnswer.toLowerCase() === answers[id].toLowerCase()) {
+                score++;
             }
         }
+    });
+
+    document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+
+    if (score === Object.keys(answers).length) {
+        document.getElementById("congrats").style.display = "block";
+    } else {
+        document.getElementById("congrats").style.display = "none";
+    }
+}
+
     </script>
 </body>
 </html>
