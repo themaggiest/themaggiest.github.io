@@ -26,32 +26,29 @@
     </style>
 </head>
 <body>
-    <h2>Birthday Quiz!</h2>
+    <h2>Fill in the Blank Quiz</h2>
     <div class="question">
-        1. Today's date (format as DD-MM-YYYY): <input type="text" id="q1">.
+        1. The capital of France is <input type="text" id="q1">.
     </div>
     <div class="question">
-        2. Your sister's first name: <input type="text" id="q2">.
+        2. The largest planet in our solar system is <input type="text" id="q2">.
     </div>
     <div class="question">
-        3. You are now <input type="text" id="q3"> months old!
+        3. Water freezes at <input type="text" id="q3"> degrees Celsius.
     </div>
     <div class="question">
-        4. Which of these scenarios does not happen in Romance of the Three Kingdoms?​
+        4. What is the chemical symbol for gold?
         <br>
-        <input type="radio" name="q4" value="A man eats his own eyeball​"> A man eats his own eyeball
-        <input type="radio" name="q4" value="A man picks up and uses another man as a weapon"> A man picks up and uses another man as a weapon
-        <input type="radio" name="q4" value="A man commits suicide by deliberately jumping off his horse​"> A man commits suicide by deliberately jumping off his horse​
-        <input type="radio" name="q4" value="A man fights a tiger with his bare hands and wins​"> A man fights a tiger with his bare hands and wins​
+        <input type="radio" name="q4" value="Ag"> Ag
+        <input type="radio" name="q4" value="Au"> Au
+        <input type="radio" name="q4" value="Pb"> Pb
     </div>
     <div class="question">
-        5. During which holiday was this picture taken?​
-        <img src="photobomb.JPG" alt="epic photobomb" width="308.8" height="232">
+        5. Which is the smallest country in the world?
         <br>
-        <input type="radio" name="q5" value="Boxing Day​"> Boxing Day
-        <input type="radio" name="q5" value="International Talk Like a Pirate Day"> International Talk Like a Pirate Day
-        <input type="radio" name="q5" value="Ezekiel Diong Birthday​"> Ezekiel Diong Birthday
-        <input type="radio" name="q5" value="Mardi Gras​"> Mardi Gras​
+        <input type="radio" name="q5" value="Monaco"> Monaco
+        <input type="radio" name="q5" value="Vatican City"> Vatican City
+        <input type="radio" name="q5" value="San Marino"> San Marino
     </div>
     <button onclick="checkAnswers()">Submit</button>
     <div class="result" id="result"></div>
@@ -59,46 +56,37 @@
 
     <script>
         function checkAnswers() {
-    console.log("checkAnswers function is running");
-
-    let answers = {
-        q1: "14-02-2025",
-        q2: "Kimberly",
-        q3: "264",
-        q4: "A man commits suicide by deliberately jumping off his horse",
-        q5: "Mardi Gras"
-    };
-
-    let score = 0;
-    Object.keys(answers).forEach(id => {
-        if (id === "q4" || id === "q5") {
-            let selectedOption = document.querySelector(`input[name="${id}"]:checked`);
-            if (selectedOption) {
-                console.log(`Answer for ${id}: ${selectedOption.value}`);
-                if (selectedOption.value === answers[id]) {
-                    score++;
+            let answers = {
+                q1: "Paris",
+                q2: "Jupiter",
+                q3: "0",
+                q4: "Au",
+                q5: "Vatican City"
+            };
+            
+            let score = 0;
+            Object.keys(answers).forEach(id => {
+                if (id === "q4" || id === "q5") {
+                    let selectedOption = document.querySelector(`input[name="${id}"]:checked`);
+                    if (selectedOption && selectedOption.value === answers[id]) {
+                        score++;
+                    }
+                } else {
+                    let userAnswer = document.getElementById(id).value.trim();
+                    if (userAnswer.toLowerCase() === answers[id].toLowerCase()) {
+                        score++;
+                    }
                 }
+            });
+            
+            document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+            
+            if (score === Object.keys(answers).length) {
+                document.getElementById("congrats").style.display = "block";
             } else {
-                console.log(`No selection made for ${id}`);
-            }
-        } else {
-            let userAnswer = document.getElementById(id)?.value?.trim();
-            console.log(`Answer for ${id}: ${userAnswer}`);
-            if (userAnswer && userAnswer.toLowerCase() === answers[id].toLowerCase()) {
-                score++;
+                document.getElementById("congrats").style.display = "none";
             }
         }
-    });
-
-    document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
-
-    if (score === Object.keys(answers).length) {
-        document.getElementById("congrats").style.display = "block";
-    } else {
-        document.getElementById("congrats").style.display = "none";
-    }
-}
-
     </script>
 </body>
 </html>
