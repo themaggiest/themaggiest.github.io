@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Pop Quiz!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blank Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fill in the Blanks</h1>
-    <p>Question 1: The capital of France is  <input type="text" id="answer1">.</p>
-    <p>Question 2: Water freezes at  <input type="text" id="answer2"> degrees Celsius.</p>
-    
-    <button onclick="checkAnswers()">Check Answers</button>
-    
+    <h2>Fill in the Blank Quiz</h2>
+    <div class="question">
+        1. The capital of France is <input type="text" id="q1">.
+    </div>
+    <div class="question">
+        2. The largest planet in our solar system is <input type="text" id="q2">.
+    </div>
+    <div class="question">
+        3. Water freezes at <input type="text" id="q3"> degrees Celsius.
+    </div>
+    <button onclick="checkAnswers()">Submit</button>
+    <div class="result" id="result"></div>
+
     <script>
         function checkAnswers() {
-            // Add your answer checking logic here, 
-            // accessing input values using document.getElementById("answer1").value etc.
-            alert("Your answers have been checked!");
+            let answers = {
+                q1: "Paris",
+                q2: "Jupiter",
+                q3: "0"
+            };
+            
+            let score = 0;
+            Object.keys(answers).forEach(id => {
+                let userAnswer = document.getElementById(id).value.trim();
+                if (userAnswer.toLowerCase() === answers[id].toLowerCase()) {
+                    score++;
+                }
+            });
+            
+            document.getElementById("result").innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
         }
     </script>
 </body>
