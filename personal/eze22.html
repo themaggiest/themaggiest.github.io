@@ -44,6 +44,14 @@
         <input type="radio" name="q4" value="A man commits suicide by deliberately jumping off his horse​"> A man commits suicide by deliberately jumping off his horse​
         <input type="radio" name="q4" value="A man fights a tiger with his bare hands and wins​"> A man fights a tiger with his bare hands and wins​
     </div>
+    <div class="question">
+        5. During which holiday was this picture taken?​
+        <br>
+        <input type="radio" name="q5" value="Boxing Day​"> Boxing Day
+        <input type="radio" name="q5" value="International Talk Like a Pirate Day"> International Talk Like a Pirate Day
+        <input type="radio" name="q5" value="Ezekiel Diong Birthday​"> Ezekiel Diong Birthday
+        <input type="radio" name="q5" value="Mardi Gras​"> Mardi Gras​
+    </div>
     <button onclick="checkAnswers()">Submit</button>
     <div class="result" id="result"></div>
     <div class="congrats" id="congrats">Congratulations! You got all the answers correct! 🎉</div>
@@ -54,13 +62,14 @@
                 q1: "09-25",
                 q2: "Kimberly",
                 q3: "264",
-                q4: "A man fights a tiger with his bare hands and wins​"
+                q4: "A man commits suicide by deliberately jumping off his horse​"
+                q5: "Mardi Gras"
             };
             
             let score = 0;
             Object.keys(answers).forEach(id => {
-                if (id === "q4") {
-                    let selectedOption = document.querySelector(`input[name="q4"]:checked`);
+                if (id === "q4" || id === "q5") {
+                    let selectedOption = document.querySelector(`input[name="${id}"]:checked`);
                     if (selectedOption && selectedOption.value === answers[id]) {
                         score++;
                     }
