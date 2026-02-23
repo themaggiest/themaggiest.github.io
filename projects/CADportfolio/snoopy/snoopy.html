@@ -180,7 +180,7 @@
           <main>
             <!-- Sidebar section -->
             <div class="sidebar">
-              <iframe src="https://a360.co/4aSKrDX" width="480" height="360" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+              <img src="snoopy_glass.jpg" alt="glass casting of Snoopy" width = "450" height="600">
             </div>
         
             <!-- Content section -->
@@ -201,12 +201,39 @@
             
            <main>
             <div id="interests"> 
-              <p>I started with this 2D design of Snoopy that I found online:</p>
-                <img src="Snoopy_Peanuts.png" alt="2D design of Snoopy" width = "588" height = "680">
-              <p>With this, I created a sketch on the xy-plane with outlines of different parts of his body and extruded to different heights, then applied drafts to each extrusion for easier pulling on the mold.</p>
-                <img src="plane_picture.png" alt="lantern's laser cutting file" width="800" height="403">
-              <p>A video that I filmed and edited about our week (52 seconds):</p>
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/pzaRQY58YSs?si=iAFVTo1FUgVWnInM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p>I started with a 2D design of Snoopy that I found online. From it, I created a sketch on the xy-plane with outlines of different parts of his body and extruded to different heights, then applied drafts to each extrusion for easier pulling on the mold. I then removed the intended part from a block to create the actual mold's design.</p>
+                <div class="row">
+                  <div class="column">
+                    <img src="Snoopy_Peanuts.png" alt="2D design of Snoopy" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="snoopy_design.png" alt="3D model of Snoopy" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <iframe src="https://a360.co/4aSKrDX" style = "width:100%"> allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+                  </div>
+                </div>
+              <p>In the Manufacture mode, I set the work coordinate system with the origin in a corner of the stock and the axes so that the longer side of the block would align with the machine's x-axis. I created new tools in the tool library for  the 3/16" and 2mm flat endmills that I wanted to use, then created a 3D pocket toolpath to rough the material, along with a 3D scallop toolpath to finish it. Since I would just be cutting wood instead of a harder material, I increased the stepdown and reduced the helical ramping.</p>
+                <div class="row">
+                  <div class="column">
+                    <img src="wcs.png" alt="setting the work coordinate system in the bottom left corner of the stock" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="toolpaths.png" alt="roughing and finishing toolpaths in Manufacture mode" style="width:100%">
+                  </div>
+                </div>
+              <p>Once I had simulated the toolpaths, I exported the .nc file through the PathPilot post-processor and brought the .nc file to the CNC mill. After zeroing with respect to the corner of the stock that I'd chosen to be the origin, I was able to successfully machine the part! As you might expect, it got REALLY scorched in the casting process.</p>
+                <div class="row">
+                  <div class="column">
+                    <img src="machining.jpg" alt="block of stock being roughed off in CNC machine" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="snoopy_wood" alt="finished wood mold of Snooopy for glass casting" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="snoopy_burnt" alt="burnt wood mold of Snoopy after molten glass was cast into it" style="width:100%">
+                  </div>
+                </div>
             </div>
            </main>
 
