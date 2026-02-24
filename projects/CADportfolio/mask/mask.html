@@ -1,1 +1,232 @@
-hi
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Maggie Lai</title>
+      <style>
+        body {
+            background: rgb(255, 255, 230);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: 'Gill Sans', 'Trebuchet MS', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #all-contents {
+            max-width: 1000px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            background: rgb(242, 134, 104);
+            margin: 20px auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px 100px / 120px;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        #nav-ul {
+            list-style-image: none;
+        }
+        .nav-li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            background: rgb(255, 233, 196);
+            display: flex;
+            
+        }
+        
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar-img {
+            width: 250px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        #interests {
+            background-color: rgb(255, 246, 230);
+            display: grid;
+            border: 10px orange solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 12px;
+        }
+        .interests_text {
+            color: brown;
+            list-style-type: square;
+            list-style-image: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h2{
+          font-size: 25px;
+          color: brown;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        p{
+            font-size: 20px;
+            color: brown;
+        }
+        li{
+            font-size:20px;
+            color:brown;
+        }
+        .row {
+          display: flex;
+        }
+        
+        /* Create three equal columns that sits next to each other */
+        .column {
+          flex: 33.33%;
+          padding: 5px;
+        }
+       
+        <body>
+        
+        #portfolio li {
+              background-color: rgb(255, 246, 230);
+              border: 5px orange solid;
+              padding: 15px;
+              border-radius: 20px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: brown;
+            }
+
+            summary::-webkit-details-marker {
+             color: brown;
+             font-size: 125%;
+             margin-right: 2px;
+            }
+            summary:focus {
+            	outline-style: none;
+                color: brown;
+            }
+            article > details > summary {
+            	font-size: 25px;
+            	margin-top: 5px;
+            }
+            details > p {
+            	margin-left: 24px;
+            }
+            details details {
+            	margin-left: 36px;
+            }
+            details details summary {
+            	font-size: 20px;
+            }
+
+            /* unvisited link */
+            a:link {
+              color: red;
+            }
+            
+            /* visited link */
+            a:visited {
+              color: green;
+            }
+            
+            /* mouse over link */
+            a:hover {
+              color: white;
+            }
+            
+            /* selected link */
+            a:active {
+              color: blue;
+            }
+
+          .subbox {
+            background-color: rgb(255, 252, 245);
+            display: grid;
+            border: 2px rgb(242, 134, 104) solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 5px;
+        }
+      </style>
+    </head>
+        
+    <body>
+      <!-- All content goes here -->
+      <div id="all-contents"> 
+        <nav>
+          <h1> Maggie Lai 赖潇颖</h1>
+          <ul id="nav-ul">
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/index.html"> Home </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/projects/CADportfolio/CADportfolio.html"> Portfolio </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/guides.html">Guides</a>
+            </li>
+          </ul>
+        </nav>
+  
+          <main>
+            <!-- Sidebar section -->
+            <div class="sidebar">
+              <img src="mask_pic.jpg" alt="picture of me wearing my 3D-printed mask with my two roommates" width = "450" height="600">
+            </div>
+        
+            <!-- Content section -->
+            <div class="content">
+              <h2>Mardi Gras Mask</h2>
+              <p>This year, my roommates and I decided to dress as the three colors of Mardi Gras for the Krewe of Muses. I wanted a masquerade mask that would fit under my glasses without the indignities of coating my face in papier-mâché, so I decided to 3D print one. For an as perfect as possible fit, I</p>
+              <ul>
+                <li>scanned my face in Polycam,</li>
+                <li>used the resulting mesh to model a mask in Autodesk Fusion,</li>
+                <li>and printed the mask with a 0.08mm layer height for maximum detail.</li>
+              </ul>
+              <p>I was able to wear my mask all night long with my glasses and wig over it with no difficulties.</p>
+            </div>
+          </main>
+        <br>
+          <br>
+            
+           <main>
+            <div id="interests"> 
+              <p>I made a scan of my face with glasses on in Polycam to know both the geometry that I should match (the contours of my face) and the geometry that I should avoid (my glasses). With that first scan, I used Fusion's surfacing capabilities to create a lofted surface representing my face, and offset from that surface to make the actual mask surface.</p>
+                <div class="row">
+                  <div class="column">
+                    <img src="face_scan.jpeg" alt="3D scan of my face" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="const_geo.png" alt="construction geometry and loft in CAD" style="width:100%">
+                  </div>
+                </div>
+              <p>Then I thickened the surface and removed holes from the mask to create a lace-like look. I also thickened some small surfaces for some raised sections.</p>
+                <iframe src="https://a360.co/46noxHt" width="1000" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+              <p>In OrcaSlicer, I sliced the mask into 0.08mm layers for higher detail and printed it. Although I had to sand some of the ridges left by supports, it was as comfortable as a plastic mask under two layers of costuming could be.</p>
+              
+            </div>
+           </main>
+
+      </div>
+  </body>
+</html>
