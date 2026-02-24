@@ -1,1 +1,244 @@
-hi
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Maggie Lai</title>
+      <style>
+        body {
+            background: rgb(255, 255, 230);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: 'Gill Sans', 'Trebuchet MS', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #all-contents {
+            max-width: 1000px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            background: rgb(242, 134, 104);
+            margin: 20px auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px 100px / 120px;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        #nav-ul {
+            list-style-image: none;
+        }
+        .nav-li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            background: rgb(255, 233, 196);
+            display: flex;
+            
+        }
+        
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar-img {
+            width: 250px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        #interests {
+            background-color: rgb(255, 246, 230);
+            display: grid;
+            border: 10px orange solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 12px;
+        }
+        .interests_text {
+            color: brown;
+            list-style-type: square;
+            list-style-image: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h2{
+          font-size: 25px;
+          color: brown;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        p{
+            font-size: 20px;
+            color: brown;
+        }
+        li{
+            font-size:20px;
+            color:brown;
+        }
+        .row {
+          display: flex;
+        }
+        
+        /* Create three equal columns that sits next to each other */
+        .column {
+          flex: 33.33%;
+          padding: 5px;
+        }
+       
+        <body>
+        
+        #portfolio li {
+              background-color: rgb(255, 246, 230);
+              border: 5px orange solid;
+              padding: 15px;
+              border-radius: 20px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: brown;
+            }
+
+            summary::-webkit-details-marker {
+             color: brown;
+             font-size: 125%;
+             margin-right: 2px;
+            }
+            summary:focus {
+            	outline-style: none;
+                color: brown;
+            }
+            article > details > summary {
+            	font-size: 25px;
+            	margin-top: 5px;
+            }
+            details > p {
+            	margin-left: 24px;
+            }
+            details details {
+            	margin-left: 36px;
+            }
+            details details summary {
+            	font-size: 20px;
+            }
+
+            /* unvisited link */
+            a:link {
+              color: red;
+            }
+            
+            /* visited link */
+            a:visited {
+              color: green;
+            }
+            
+            /* mouse over link */
+            a:hover {
+              color: white;
+            }
+            
+            /* selected link */
+            a:active {
+              color: blue;
+            }
+
+          .subbox {
+            background-color: rgb(255, 252, 245);
+            display: grid;
+            border: 2px rgb(242, 134, 104) solid;
+            padding: 12px;
+            border-radius: 30px;
+            margin: 5px;
+        }
+      </style>
+    </head>
+        
+    <body>
+      <!-- All content goes here -->
+      <div id="all-contents"> 
+        <nav>
+          <h1> Maggie Lai 赖潇颖</h1>
+          <ul id="nav-ul">
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/index.html"> Home </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/projects/CADportfolio/CADportfolio.html"> Portfolio </a>
+            </li>
+            <li class="nav-li">
+              <a href="https://themaggiest.github.io/guides.html">Guides</a>
+            </li>
+          </ul>
+        </nav>
+  
+          <main>
+            <!-- Sidebar section -->
+            <div class="sidebar">
+              <img src="parts.jpg" alt="glass casting of Snoopy" width = "450" height="600">
+            </div>
+        
+            <!-- Content section -->
+            <div class="content">
+              <h2>Plasma Cutter Nozzle</h2>
+              <p>A sculptor at Tulane purchased a new size of nozzle for her plasma cutter, and the new nozzles didn't fit inside the existing holding ring. This is a project in progress, but thus far I have</p>
+              <ul>
+                <li>measured all of the parts using calipers,</li>
+                <li>modeled and 3D printed rings corresponding to possible different fits,</li>
+                <li>and given them to her to see which one she likes the most.</li>
+              </ul>
+              <p>Once she chooses a sizing, I will</p>
+              <ul>
+                <li>cut a cylindrical piece of plastic to that size on the CNC lathe to ensure that the machining fit is also correct</li>
+                <li>and then use the conversational mode on it with the inner diameter turn and tool to machine out the required circumference.</li>
+              </ul>
+              <p>I train MakerSpace users on the lathe, so it's great to have an opportunity to use it in a non-pedagogical setting.</p>
+            </div>
+          </main>
+        <br>
+          <br>
+            
+           <main>
+            <div id="interests"> 
+              <p>The nozzle is slightly too large for the holding ring, as you can see below - when I measured, I found that the nozzle itself had a 25mm diameter, while the ring's hole was only 24mm.</p>
+                <div class="row">
+                  <div class="column">
+                    <img src="nozzle_ring.jpg" alt="the nozzle and ring laying side by side" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="poor_fit.jpg" alt="the nozzle pictured not fitting into the ring" style="width:100%">
+                  </div>
+                </div>
+              <p>I 3D printed three different ring sizes: one with the same size hole as the actual ring (to later machine out), one with a 25.5mm diameter, and one with a 26mm diameter. The 25.5mm diameter ring has a very snug fit, whereas the 26mm diameter ring is easier to remove. She's in the process of picking a sizing, but once she does I'll use the inner diameter turning tool and the existing inner diameter toolpath creation window on the Tormach lathe digital readout to cut the part to her desired diameter.</p>
+                
+                <div class="row">
+                  <div class="column">
+                    <img src="lathe_tools.jpg" alt="the lathe tools that we have available" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="ID_turn.png" alt="inner diameter turn toolpath on Tormach DRO" style="width:100%">
+                  </div>
+                </div>
+              
+            </div>
+           </main>
+
+      </div>
+  </body>
+</html>
